@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D8E6FC; 
+}
+
+header {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 40px; /* Set your preferred height */
+}
+
+nav .logo {
+  height: 100%; /* Fits the height of the navigation bar */
+  max-height: 40px; /* Matches the nav bar height */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    gap: 20px; /* Adjust the spacing between menu items */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    font-family: 'Mali', cursive;
+    text-decoration: none;
+    color: #85B2F1;
+    font-size: 25px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #D8E6FC;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Section Styles */
+#hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #D8E6FC;
+    color: #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.text-content {
+    text-align: left;
+    padding-right: 20px;
+    color: #FAEEE1;
+}
+
+.image-content {
+    margin-left: 20px;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #85B2F1;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 85px;
+    margin: 0;
+}
+
+/* About Page Styles */
+#about {
+    text-align: right;
+    padding: 50px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 70px); 
+    max-width: 1200px;
+    margin: 30px auto 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.text-content {
+    margin-left: 300px; 
+}
+
+.highlight {
+    color: #F6C977;
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.highlight:hover {
+    transform: scale(1.5); /* Increase size on hover */
+}
+
+.highlight-secondary {
+    color: #85B2F1;
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.highlight-secondary:hover {
+    color: #FBA18C; 
+    transform: scale(1.1); 
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #85B2F1;
+    margin: 20px 0;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.back-to-home {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #85B2F1;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #FBA18C;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Ensures images are clipped to the container */
+}
+
+.rounded-rectangle {
+    width: 650px;
+    height: 426px;
+    background-color: #A4CAFD;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Ensures images are clipped to the rectangle */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.teddy2-image {
+    position: absolute;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    top: 100%; /* Initially positioned below the view */
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.hands-image {
+    position: absolute;
+    width: 70%;
+    height: auto; /* Maintain aspect ratio */
+    top: 370px;
+    left: 70px;
+    z-index: 3;
+}
+
+/* Teddy2 Visible State */
+.teddy2-visible {
+    top: 0;
+    opacity: 1;
+}
+
+/* Initial State for Rounded Rectangle */
+.rounded-rectangle {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Teddy2 Gradual Appearance Effect */
+.teddy2-appear {
+    animation: appearFromBottom 1s ease-in-out forwards;
+}
+
+@keyframes appearFromBottom {
+    from {
+        top: 100%;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/* Rounded Rectangle Rotate and Color Change Effect */
+.rectangle-rotate-color {
+    transform: rotate(15deg); /* Rotates the rectangle by 15 degrees */
+    background-color: #FBA18C; /* Changes the background color */
+}
+
+/* New Fade-In Effect */
+.rectangle-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Shake and Flash Effect */
+.rectangle-shake-flash {
+    animation: shake 0.5s ease-in-out, flash 1s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes flash {
+    0%, 100% {
+        background-color: #A4CAFD; /* Original color */
+    }
+    50% {
+        background-color: #FFD700; /* Flash to gold */
+    }
+}
